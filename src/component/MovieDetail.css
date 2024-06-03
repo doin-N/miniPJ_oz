@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+}
+
+.movie-detail {
+  margin: 80px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  width: 90%;
+  gap: 40px;
+}
+
+.movie-detail-introduce {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1000px;
+}
+
+.movie-detail-introduce-a {
+  font-size: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
+}
