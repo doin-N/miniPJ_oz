@@ -1,7 +1,18 @@
-/* #root {
+#root {
+  position: relative;
+  /* display: flex;
+  justify-content: center; */
+}
+/* 
+자식 요소들 div 수평 중앙정렬을 위해 부모 요소에 적용함
   display: flex;
-  flex-wrap: wrap;
-} */
+  justify-content: center;
+
+  수직중앙정렬
+  position: relative;
+
+  그다음 자식요소에서 포지션 설정 
+*/
 
 /* body {
   margin: 0;

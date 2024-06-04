@@ -1,27 +1,32 @@
+/* 전체 */
 * {
   box-sizing: border-box;
   background-color: black;
   color: white;
 }
 
+/* 포스터 + 정보 묶은 부분 */
 .movie-detail {
   margin: 80px;
   display: flex;
-  flex-direction: row;
   align-content: center;
   justify-content: center;
   width: 90%;
   gap: 40px;
 }
 
+/* 제목 평점 장르 줄거리까지 다 묶은 부분 */
 .movie-detail-introduce {
   height: auto;
+  text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* 아이템을 세로 방향 순서대로 흐르게 만들기 */
   justify-content: center;
   width: 1000px;
+  gap: 30px;
 }
 
+/* 제목과 평점 부분 */
 .movie-detail-introduce-a {
   font-size: 40px;
   display: flex;
