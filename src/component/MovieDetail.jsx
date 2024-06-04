@@ -7,20 +7,22 @@ import axios from "../api/axios";
   /* MovieDeta에서 정보를 가져와서 필요한 태그에 내려주기 (더미자료라 가능) */
 }
 
+//1 영화의 상세정보 페이지를 표시하는 부분
 function MovieDetail() {
   //hooks중 하나로 파라미터 값을 넘겨받은 페이지에서 사용할수 있게 해주는것
   // 동적인내용을 바꿀때 주소창에서 씀
-  const { id } = useParams();
-  console.log(id);
+  const { id } = useParams(); // 1-2 url에서 파라미터 id 값을 추출
+  //  console.log(id);
 
   const [detailResult, setDetailResult] = useState(null);
 
+  // 1-3 무비디테일 컴포넌트가 처음 마운트(렌더링)될떄 유즈이펙트를 한번 호출 하는데 초기값이 id
   useEffect(() => {
     const fetchData = async () => {
       try {
         //여기에 있는 로직이 이상하면 캐치가 잡는다
         const response = await axios.get(`/movie/${id}`);
-        console.log(response.data);
+        // console.log(response.data);
         setDetailResult(response.data);
       } catch (error) {}
     };
