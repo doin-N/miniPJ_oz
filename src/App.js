@@ -5,6 +5,8 @@ import { Route, Routes } from "react-router-dom";
 import axios from "./api/axios";
 import { useEffect, useState } from "react";
 import NavBar from "./component/NavBar";
+import Singup from "./component/Singup";
+import Login from "./component/Login";
 
 const App = () => {
   //메인페이지에 가져갈 정보
@@ -22,6 +24,10 @@ const App = () => {
     fetchData();
     //페이지를 처음 열었을떄 함수 실행
   }, []);
+
+  {
+    /* 디테일 페이지에 pors로 제이슨파일 정보 보내주기 */
+  }
 
   const Movies = () => {
     return (
@@ -42,20 +48,18 @@ const App = () => {
 
   return (
     <>
-      <NavBar />
+      <NavBar path="/" element={<Movies />} />
       <Routes>
         <Route path="/" element={<Movies />} />
         <Route path="/details/:id" element={<MovieDetail />} />
         {/* elemen 는 / 주소로 왔을때 보여주고 싶은 컴포넌트 */}
         {/*  path="/details" 기본 주소에서 넘어가는 페이지의 이름 적어주기 */}
+        <Route path="/singup" element={<Singup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );
 };
-
-{
-  /* 디테일 페이지에 pors로 제이슨파일 정보 보내주기 */
-}
 
 export default App;
 

@@ -1,8 +1,20 @@
-#root {
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: #232931;
+}
+
+/* #root {
   position: relative;
   /* display: flex;
-  justify-content: center; */
-}
+  justify-content: center; 
+} 
+*/
 /* 
 자식 요소들 div 수평 중앙정렬을 위해 부모 요소에 적용함
   display: flex;

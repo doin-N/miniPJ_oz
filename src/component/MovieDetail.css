@@ -1,12 +1,6 @@
-/* 전체 */
-* {
-  box-sizing: border-box;
-  background-color: black;
-  color: white;
-}
-
 /* 포스터 + 정보 묶은 부분 */
 .movie-detail {
+  box-sizing: border-box;
   margin: 80px;
   display: flex;
   align-content: center;
@@ -22,7 +16,7 @@
   display: flex;
   flex-direction: column; /* 아이템을 세로 방향 순서대로 흐르게 만들기 */
   justify-content: center;
-  width: 1000px;
+  width: 600px;
   gap: 30px;
 }
 

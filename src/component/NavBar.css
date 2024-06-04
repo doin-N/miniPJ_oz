@@ -1,12 +1,13 @@
-* {
-  box-sizing: border-box;
-  background-color: blue;
-  color: white;
-  width: 20px;
+.nav-logo {
+  background-color: #000000;
+  display: flex; /* 가로로 정렬 */
+  justify-content: space-between; /* 양끝 정렬 */
+  align-items: center; /* 세로로 가운데정렬  */
+  padding: 5px 10px;
 }
 
-.nav-logo {
+.nav-btn {
+  margin-right: 10px;
   display: flex;
-  align-content: center;
-  justify-content: center;
+  gap: 20px;
 }

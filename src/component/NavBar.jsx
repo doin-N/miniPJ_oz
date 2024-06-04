@@ -1,13 +1,42 @@
 import React from "react";
+import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <div className="nav">
       <div className="nav-logo">
-        <img src={process.env.PUBLIC_URL + "/pngwing.com.png"} width="100px" />
+        <Link to={"/"}>
+          <img
+            src={process.env.PUBLIC_URL + "/pngwing.com.png"}
+            width="100px"
+          />
+        </Link>
         <div className="nav-btn">
-          <button id="join">회원가입</button>
-          <button id="login">로그인</button>
+          <Link to={`/singup`}>
+            <button
+              id="join"
+              style={{
+                width: "100px",
+                height: "30px",
+                color: "black",
+              }}
+            >
+              회원가입
+            </button>
+          </Link>
+          <Link to={`/login`}>
+            <button
+              id="login"
+              style={{
+                width: "100px",
+                height: "30px",
+                color: "black",
+              }}
+            >
+              로그인
+            </button>
+          </Link>
         </div>
       </div>
     </div>
