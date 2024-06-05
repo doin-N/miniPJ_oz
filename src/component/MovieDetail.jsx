@@ -23,7 +23,7 @@ function MovieDetail() {
       try {
         //여기에 있는 로직이 이상하면 캐치가 잡는다
         const response = await axios.get(`/movie/${id}`);
-        // console.log(response.data);
+        //console.log(response.data);
         setDetailResult(response.data);
       } catch (error) {}
     };

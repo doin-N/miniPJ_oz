@@ -3,12 +3,57 @@
   color: white;
 }
 
+/* 포스터 + 타이틀 + 평점 묶은 박스*/
 .movie-map-box {
   margin-bottom: 70px; /* 사진크기를 맞추면 글씨가 잘려서 마진을 줌*/
-  width: 350px;
-  height: 500px;
+  width: 21.875rem;
+  height: 31.25rem;
+  transition: transform 0.3s; /* 특정속성이 변할때 애니메이션 적용 0.3초 지속*/
+  -webkit-transition: transform 0.3s;
+  text-align: center;
 }
+
+.movie-map-box:hover {
+  transform: scale(1.05); /* 크기를 바꾼다 : 커지게 한다(이만큼)*/
+}
+
+/* 포스터 이미지 */
 .movie-map-box img {
   width: 100%; /* 부모 사이즈에 비례 */
   height: 100%;
+  border: 1px double transparent;
+  border-radius: 1rem;
+}
+
+/* 제목 */
+.movie-map-box-title {
+  margin-top: 7px;
+}
+
+/* 평점 */
+.movie-map-box-average {
+  margin-top: 3px;
+}
+
+/* 전체박스 반응형 미디어쿼리 */
+
+@media screen and (max-width: 420px) {
+  .movie-map-box {
+    padding: 0 5px;
+    width: 8rem;
+    height: 12rem;
+    font-size: 13px;
+    transition: transform 0.3s; /* 특정속성이 변할때 애니메이션 적용 0.3초 지속*/
+    -webkit-transition: transform 0.3s;
+  }
+  /* .movie-map-box:hover {
+    transform: scale(9.05);
+  } */
+}
+
+.movie-map-box {
+  @media screen and (min-width: 421px) and (max-width: 950px) {
+    width: 14rem;
+    height: 20rem;
+  }
 }

@@ -1,0 +1,47 @@
+/* .searchContent {
+  height: 100vw;
+} */
+
+/* 색션1 무비정보 */
+.search-all {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* 포스터 + 이미지를 감싸는 박스를 감싸는 박스*/
+.movie {
+  flex: 1 1 auto; /* 플렉스 grow(요소의공간) , shrink(요소의축소되는정도) , basis(요소의초기크기)*/
+  display: inline-block; /* 인라인요소처럼 배치하지만 블록요소처럼 동작하게 옆으로 나란히 배치, 너비와 높이설정가능*/
+  padding-right: 0.5rem;
+  padding-bottom: 2rem;
+}
+
+/*  이미지를 감싸고 있는 박스 */
+.search-movie-detail-page {
+  cursor: pointer; /* 커서가 포인터로 변하게 하기*/
+  transition: transform 0.3s; /* 특정속성이 변할때 애니메이션 적용 0.3초 지속*/
+  -webkit-transition: transform 0.3s;
+}
+
+.search-movie-detail-page:hover {
+  /* 요소에 :hover 마우스를 올렸을떄 */
+  transform: scale(1.1); /* 모양을 바꾼다 : 크기를 바꾼다 (1.1배로 약 10%) */
+}
+
+/* 포스터 이미지 */
+.search-movie-poster {
+  width: 90%;
+  border: 6px double #373a40;
+  border-radius: 20px;
+}
+
+/* 영화가 검색되지 않을때 */
+.no-search-all {
+  padding: 2rem 0;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
