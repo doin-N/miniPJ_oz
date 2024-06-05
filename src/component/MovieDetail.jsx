@@ -11,7 +11,8 @@ import axios from "../api/axios";
 function MovieDetail() {
   //hooks중 하나로 파라미터 값을 넘겨받은 페이지에서 사용할수 있게 해주는것
   // 동적인내용을 바꿀때 주소창에서 씀
-  const { id } = useParams(); // 1-2 url에서 파라미터 id 값을 추출
+  // params는 받은 url에서 파라미터 id 값만 추출
+  const { id } = useParams();
   //  console.log(id);
 
   const [detailResult, setDetailResult] = useState(null);

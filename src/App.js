@@ -9,21 +9,29 @@ import Singup from "./component/Singup";
 import Login from "./component/Login";
 
 const App = () => {
-  //메인페이지에 가져갈 정보
-  const [result, setResult] = useState([]);
+  //메인페이지에 가져갈 정보 영화 정보
+  const [result, setResult] = useState([]); //컴포넌트가 마운트될때 (돔에 추가되고 렌더링될떄) 한번 실행
 
+  //컴포넌트가 처음 랜더링 될 때 한번만 실행되는 함수
   useEffect(() => {
     const fetchData = async () => {
+      //  async는 선언된 변수를 비동기(동시에 일어나지 않는) 함수로 만듬
       try {
         //여기에 있는 로직이 이상하면 캐치가 잡는다
+
         const response = await axios.get("/movie/popular");
-        //console.log(response.data.results);
+        //axios.get("/movie/popular") 데이터 가져오기
+        //그리고 데이터 가져오는 작업이 끝날때까지 await(기다리기)했다가 그 작업이 끝나면 변수선언
+        // console.log(response);
         setResult(response.data.results);
+        //  useState의  result 상태로 설정
       } catch (error) {}
     };
+
     fetchData();
-    //페이지를 처음 열었을떄 함수 실행
+    //페이지를 처음 열었을때 함수 실행
   }, []);
+  //[]의존성 배열 빈배열이면 1번만 실행
 
   {
     /* 디테일 페이지에 pors로 제이슨파일 정보 보내주기 */
@@ -32,7 +40,7 @@ const App = () => {
   const Movies = () => {
     return (
       <div id="abc">
-        {/*Movie제이슨에서 results의 속성을 통해 배열을 가져온 후 map함수 실행 (movie에 대해 특정 작업을 수행하겠다. => {*/}
+        {/* result 상태에 map으로 movie데이터 가져오기 */}
         {result.map((movie) => (
           <MovieCard
             key={movie.id}
@@ -54,6 +62,7 @@ const App = () => {
         <Route path="/details/:id" element={<MovieDetail />} />
         {/* elemen 는 / 주소로 왔을때 보여주고 싶은 컴포넌트 */}
         {/*  path="/details" 기본 주소에서 넘어가는 페이지의 이름 적어주기 */}
+        {/* /details/:id 이 주소가 확인되면 화면을 보여줄게 */}
         <Route path="/singup" element={<Singup />} />
         <Route path="/login" element={<Login />} />
       </Routes>

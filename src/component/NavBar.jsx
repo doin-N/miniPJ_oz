@@ -10,6 +10,7 @@ const NavBar = () => {
           <img
             src={process.env.PUBLIC_URL + "/pngwing.com.png"}
             width="100px"
+            // onClick={() => }
           />
         </Link>
         <div className="nav-btn">
