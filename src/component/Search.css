@@ -31,6 +31,7 @@
 
 /* 포스터 이미지 */
 .search-movie-poster {
+  background-clip: content-box; /*요소 내에서 배경이 확장되게 하는것 보더박스만큼 */
   width: 90%;
   border: 6px double #373a40;
   border-radius: 20px;
@@ -44,4 +45,26 @@
   justify-content: center;
   align-items: center;
   color: white;
+}
+
+@media screen and (max-width: 768px) {
+  /* 포스터 + 이미지를 감싸는 박스를 감싸는 박스*/
+  .movie {
+    padding: 0 5px;
+    width: 8rem;
+
+    font-size: 13px;
+    transition: transform 5s; /* 특정속성이 변할때 애니메이션 적용 0.3초 지속*/
+    -webkit-transition: transform 5s;
+  }
+  /* .movie-map-box:hover {
+    transform: scale(9.05);
+  } */
+}
+
+.movie {
+  @media screen and (min-width: 768px) and (max-width: 950px) {
+    width: 14rem;
+    height: 20rem;
+  }
 }

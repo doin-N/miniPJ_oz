@@ -26,17 +26,14 @@ const App = () => {
         // console.log(response);
         setResult(response.data.results);
         //  useState의  result 상태로 설정
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+      }
     };
-
     fetchData();
     //페이지를 처음 열었을때 함수 실행
   }, []);
   //[]의존성 배열 빈배열이면 1번만 실행
-
-  {
-    /* 디테일 페이지에 pors로 제이슨파일 정보 보내주기 */
-  }
 
   const Movies = () => {
     return (

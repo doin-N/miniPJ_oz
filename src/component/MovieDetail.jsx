@@ -20,9 +20,11 @@ function MovieDetail() {
   // 1-3 무비디테일 컴포넌트가 처음 마운트(렌더링)될떄 유즈이펙트를 한번 호출 하는데 초기값이 id
   useEffect(() => {
     const fetchData = async () => {
+      //  async는 선언된 변수를 비동기(동시에 일어나지 않는) 함수로 만듬
       try {
         //여기에 있는 로직이 이상하면 캐치가 잡는다
         const response = await axios.get(`/movie/${id}`);
+        //await는 비동기 함수를 동기 함수처�� 사용할 수 있게 해��
         //console.log(response.data);
         setDetailResult(response.data);
       } catch (error) {}

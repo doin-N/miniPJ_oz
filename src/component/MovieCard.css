@@ -1,16 +1,17 @@
 .movie-map {
   /* box-sizing: border-box; */
+
   color: white;
 }
 
 /* 포스터 + 타이틀 + 평점 묶은 박스*/
 .movie-map-box {
   margin-bottom: 70px; /* 사진크기를 맞추면 글씨가 잘려서 마진을 줌*/
-  width: 21.875rem;
-  height: 31.25rem;
   transition: transform 0.3s; /* 특정속성이 변할때 애니메이션 적용 0.3초 지속*/
   -webkit-transition: transform 0.3s;
   text-align: center;
+  width: 21.875rem;
+  height: 31.25rem;
 }
 
 .movie-map-box:hover {
@@ -23,6 +24,10 @@
   height: 100%;
   border: 1px double transparent;
   border-radius: 1rem;
+
+  /* 이미지나 비디오를 컨테이너 크기에 맞추자
+  원본 비율이 유지되면서 맞춰짐
+  */
 }
 
 /* 제목 */
@@ -37,11 +42,13 @@
 
 /* 전체박스 반응형 미디어쿼리 */
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 767px) {
+  /* 포스터 + 타이틀 + 평점 묶은 박스 스마트폰~ 아이패드 미니까지 768이하*/
   .movie-map-box {
     padding: 0 5px;
-    width: 8rem;
-    height: 12rem;
+
+    width: 9rem;
+    height: 13rem;
     font-size: 13px;
     transition: transform 0.3s; /* 특정속성이 변할때 애니메이션 적용 0.3초 지속*/
     -webkit-transition: transform 0.3s;
@@ -51,9 +58,20 @@
   } */
 }
 
-.movie-map-box {
-  @media screen and (min-width: 421px) and (max-width: 950px) {
-    width: 14rem;
-    height: 20rem;
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* 포스터 + 타이틀 + 평점 묶은 박스 태블릿부터 소형 노트북까지 76이상 */
+  .movie-map-box {
+    padding: 0 5px;
+    width: 18rem;
+    height: 24rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  /* 포스터 + 타이틀 + 평점 묶은 박스 소형노트북 이상 */
+  .movie-map-box {
+    padding: 0 5px;
+    width: 18rem;
+    height: 24rem;
   }
 }
