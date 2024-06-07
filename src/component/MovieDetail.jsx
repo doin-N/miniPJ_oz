@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./MovieDetail.css";
-import MovieDeta from "../movieDetailData.json";
 import { useParams } from "react-router-dom";
 import axios from "../api/axios";
 {
@@ -21,11 +20,12 @@ function MovieDetail() {
   useEffect(() => {
     const fetchData = async () => {
       //  async는 선언된 변수를 비동기(동시에 일어나지 않는) 함수로 만듬
+      // api를 호출하는거처럼 시간이 걸리는 일을 할때
       try {
         //여기에 있는 로직이 이상하면 캐치가 잡는다
         const response = await axios.get(`/movie/${id}`);
         //await는 비동기 함수를 동기 함수처�� 사용할 수 있게 해��
-        //console.log(response.data);
+        console.log(response.data);
         setDetailResult(response.data);
       } catch (error) {}
     };
@@ -39,10 +39,17 @@ function MovieDetail() {
 
   return (
     <div className="movie-detail">
-      <div className="movie-detail-img">
-        <img
-          src={`https://image.tmdb.org/t/p/w500/${detailResult.poster_path}`}
-        />
+      <div className="imgs">
+        <div className="movie-detail-img">
+          <img
+            src={`https://image.tmdb.org/t/p/original${detailResult.backdrop_path}`}
+          />
+        </div>
+        <div className="movie-detail-img-child">
+          <img
+            src={`https://image.tmdb.org/t/p/w500${detailResult.poster_path}`}
+          />
+        </div>
       </div>
 
       <div className="movie-detail-introduce">

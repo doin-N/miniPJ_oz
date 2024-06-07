@@ -20,6 +20,7 @@ export const useDebounce = (value, delay) => {
 
     return () => {
       //setTimeout을 없애주기 위해서 사용
+      //이전타임에 적은 검색어를 다 적기전에 다른 검색어를 썻을때
       clearTimeout(handler);
     };
   }, [value, delay]);

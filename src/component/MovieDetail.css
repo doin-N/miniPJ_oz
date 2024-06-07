@@ -1,12 +1,15 @@
 /* 포스터 + 정보 묶은 부분 */
 .movie-detail {
+  overflow: hidden;
   box-sizing: border-box;
-  margin: 80px;
+  margin: 70px;
   display: flex;
   align-content: center;
   justify-content: center;
-  width: 90%;
+  width: 100vw;
+  height: 90vw;
   gap: 40px;
+  color: white;
 }
 
 /* 제목 평점 장르 줄거리까지 다 묶은 부분 */
@@ -29,3 +32,40 @@
   align-content: center;
   gap: 20px;
 }
+
+.imgs {
+  position: relative;
+}
+
+.movie-detail-img {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.movie-detail-img-child {
+  position: absolute;
+  left: 0;
+  bottom: 0.75em;
+}
+
+/* .movie-detail-img-back {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+
+  opacity: 0.25;
+}
+
+.movie-detail-img-child {
+  position: absolute;
+  flex: 1;
+  top: 8rem;
+  left: 200px;
+  min-width: 500px;
+  opacity: 1;
+  z-index: 80;
+} */

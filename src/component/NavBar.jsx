@@ -39,6 +39,7 @@ const NavBar = () => {
             //5. 체인지 이벤트가 발생했을때 검색창에 값을 벨류값에 넣어줘
             placeholder="검색할 영화 제목을 입력해 주세요"
           />
+          <SearcIcon />
           <BtnBox>
             <Link to={`/singup`}>
               <JoinBut>회원가입</JoinBut>
@@ -96,6 +97,19 @@ const BtnBox = styled.div`
 const Input = styled.input`
   width: 200px;
   height: 30px;
+  @media (max-width: 767px) {
+    display: none;
+`;
+
+//검색버튼 아이콘
+const SearcIcon = styled.img.attrs({
+  src: "/pngwing.com.png",
+  alt: "사진",
+})`
+  width: 50px;
+  @media (min-width: 767px) {
+    display: none;
+  }
 `;
 
 //회원가입버튼
@@ -107,11 +121,15 @@ const JoinBut = styled.button`
   }
 `;
 
+//회원가입아이콘
 const JoinIcon = styled.img.attrs({
   src: "/pngwing.com.png",
   alt: "사진",
 })`
-  width: 80px;
+  width: 50px;
+  @media (min-width: 767px) {
+    display: none;
+  }
 `;
 
 //로그인버튼
@@ -123,9 +141,13 @@ const LoginBut = styled.button`
   }
 `;
 
+//로그인아이콘
 const LoginIcon = styled.img.attrs({
   src: "/pngwing.com.png",
   alt: "사진",
 })`
-  width: 80px;
+  width: 50px;
+  @media (min-width: 767px) {
+    display: none;
+  }
 `;
