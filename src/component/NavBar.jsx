@@ -15,7 +15,6 @@ const NavBar = () => {
   const navigate = useNavigate();
 
   //구글 로그인 팝업창 뜨게하기 위한
-
   const handleChange = (e) => {
     setMovieSearchValue(e.target.value);
     navigate(`/search?q=${e.target.value}`);
@@ -26,6 +25,7 @@ const NavBar = () => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
+      //Firebase Authentication에서 사용자의 인증 상태가 변경될 때마다 호출되는 콜백 함수입니다. 이 콜백 함수는 사용자가 로그인하거나 로그아웃할 때마다 호출되며, 현재 로그인된 사용자의 정보를 제공
       if (user) {
         setIsLoggedIn(true);
         setUser(user);
@@ -97,6 +97,7 @@ const NavBar = () => {
                   alt={user.displayNamm}
                 />
                 <DropDown>
+                  <span>관심목록</span> <br />
                   <span onClick={handleLogOut}>로그아웃</span>
                 </DropDown>
               </SignOut>
@@ -215,7 +216,7 @@ box-shadow: rgb(0 0 0 / 50%) 0px 0px 18px 0px;
 padding: 10px;
 font-size: 14px;
 letter-spacing 3px;
-width: 100px;
+width: 50px;
 opacity: 0;
 `;
 

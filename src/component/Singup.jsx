@@ -33,6 +33,7 @@ const Singup = () => {
     return passwordRegex.test(password);
   };
 
+  //폼음 제출할때 실행되는 함수
   const handleSignup = async (e) => {
     e.preventDefault(); //폼 제출시 페이지 새로고침 방지
     if (!validateEmail(email)) {
@@ -51,6 +52,7 @@ const Singup = () => {
     }
     try {
       await createUserWithEmailAndPassword(auth, email, password);
+      // createUserWithEmailAndPassword함수로 새로운 사용자를 생성
       navigate("/login"); // 회원가입 후 로그인 페이지로 이동
     } catch (error) {
       setError(error.message);
@@ -62,48 +64,50 @@ const Singup = () => {
     <div>
       <h1>회원가입</h1>
       <form onSubmit={handleSignup}>
-        <div>
-          <label htmlFor="name">이름:</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+        <div className="signup-form">
+          <div>
+            <label htmlFor="name">이름:</label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              autoComplete="off"
+            />
+          </div>
+          <div>
+            <label htmlFor="email">이메일:</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              autoComplete="off"
+            />
+          </div>
+          <div>
+            <label htmlFor="password">비밀번호:</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="off"
+            />
+          </div>
+          <div>
+            <label htmlFor="confirmPassword">비밀번호 확인:</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              autoComplete="off"
+            />
+          </div>
+          {error && <p style={{ color: "red" }}>{error}</p>}
+          <button type="submit">회원가입</button>
         </div>
-        <div>
-          <label htmlFor="email">이메일:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="password">비밀번호:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="confirmPassword">비밀번호 확인:</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <button type="submit">회원가입</button>
       </form>
     </div>
   );

@@ -17,5 +17,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+//firebase앱을 초기화
+export const auth = getAuth();
+// 인증객체를 가져오는함수
 export default app;

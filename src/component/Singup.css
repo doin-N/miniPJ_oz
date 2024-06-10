@@ -1,5 +1,28 @@
 /* 제목부터 제출까지 */
+form {
+  display: flex;
+  flex-direction: column; /* 위에서 아래로 정렬 */
+  align-items: center; /* 세로축 정렬 세로를 기준으로 위아래로 정렬*/
+  justify-content: center; /* 가로축 정렬 가로를 기준으로 양옆으로 정렬 */
+  width: 100vw;
+  height: 100%;
+  padding: 20px 0;
+  gap: 20px;
+  color: black;
+}
 
+.signup-form {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  width: 35%;
+  display: flex;
+  flex-direction: column; /* 위에서 아래로 정렬 */
+  align-items: center; /* 세로축 정렬 세로를 기준으로 위아래로 정렬*/
+  justify-content: center; /* 가로축 정렬 가로를 기준으로 양옆으로 정렬*/
+  padding: 20px 0;
+  gap: 20px;
+  background-color: white;
+}
 .sing-up {
   padding-top: 100px;
   display: flex;
@@ -16,4 +39,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+input {
+  width: 150px;
+  height: 30px;
 }

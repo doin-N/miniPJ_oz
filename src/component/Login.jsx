@@ -13,7 +13,7 @@ import app from "../firebase";
 const Login = () => {
   //구글 로그인 팝업창 뜨게하기 위한
   const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
+  const provider = new GoogleAuthProvider(); //로그인을 구현되는데 사용되는 도구  인증 플로우를 관리
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userDataImg, setuserDataImg] = useState({});
@@ -37,9 +37,10 @@ const Login = () => {
     console.log(userDataImg);
   };
 
+  //회원가입 후 로그인
   const handleEmailLogin = async (e) => {
     e.preventDefault();
-    const auth = getAuth(app);
+    // const auth = getAuth(app);
     try {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/");
@@ -47,6 +48,7 @@ const Login = () => {
       alert(error.message);
     }
   };
+
   //로그인 화면에 보이는 내용
   return (
     <>
@@ -107,3 +109,7 @@ const Login = () => {
 };
 
 export default Login;
+
+// 구글로그인 할껀지 말껀지 설정하는거
+//구글로그인 버튼
+//회원가입후 자동 로그인 되지 않게 하기
