@@ -39,35 +39,38 @@ function MovieDetail() {
 
   return (
     <div className="movie-detail">
-      <div className="imgs">
-        <div className="movie-detail-img">
-          <img
-            src={`https://image.tmdb.org/t/p/original${detailResult.backdrop_path}`}
-          />
-        </div>
-        <div className="movie-detail-img-child">
-          <img
-            src={`https://image.tmdb.org/t/p/w500${detailResult.poster_path}`}
-          />
-        </div>
+      <div className="movie-detail-img">
+        <img
+          className="background-img"
+          src={`https://image.tmdb.org/t/p/original${detailResult.backdrop_path}`}
+        />
+      </div>
+      <div className="movie-detail-img-child">
+        <img
+          className="poster-img"
+          src={`https://image.tmdb.org/t/p/w500${detailResult.poster_path}`}
+        />
       </div>
 
       <div className="movie-detail-introduce">
         <div className="movie-detail-introduce-a">
-          <div className="movie-detail-title"> {detailResult.title}</div>
-          <div className="movie-detail-average">
+          <div className="movie-detail-title introduce">
+            {" "}
+            {detailResult.title}
+          </div>
+          <div className="movie-detail-average introduce">
             {" "}
             평점: {detailResult.vote_average}
           </div>
         </div>
 
-        <div className="movie-detail-genres">
+        <div className="movie-detail-genres introduce">
           {" "}
           장르 : {detailResult.genres.map((genre) => genre.name).join(", ")}
         </div>
         {/* 맵을 쓰면 배열을 새로 만든다 배열을 문자열로 바꾸기 위해 조인을 쓴다.  태그로 만드는법 해보기 */}
 
-        <div> 줄거리 {detailResult.overview} </div>
+        <div className="introduce"> 줄거리 {detailResult.overview} </div>
       </div>
     </div>
   );

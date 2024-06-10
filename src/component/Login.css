@@ -1,11 +1,30 @@
+.divlogin-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 h1 {
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10rem;
 }
+/* 로그인입력박스 */
+.login-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  margin-top: 1rem;
+  padding: 2rem 0;
+  border: 1px solid black;
+  border-radius: 12px;
+}
+
 .login-pag-a {
-  color: white;
   font-size: 20px;
   display: flex;
   flex-direction: column;

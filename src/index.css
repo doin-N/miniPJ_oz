@@ -3,10 +3,11 @@ html {
   width: 100%;
 }
 body {
-  height: 100%;
+  height: auto;
   width: 100%;
   margin: 0;
-  background-color: #232931;
+  background-color: #393e46;
+  color: white;
   /* padding-top: 80px; */
   /* 네브바를 고정했더니 다른페이지의 요소가 가려지는 현상이 발생, 네브바 높이와 똑같은 패딩값을
    전체 바디에 줌으로 해결

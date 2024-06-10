@@ -3,10 +3,9 @@
 2. 여기는 무비카드의 포스터, 제목, 평점이 표시되는 곳
 */
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./MovieCard.css";
 import { Link } from "react-router-dom";
-import axios from "../api/axios";
 
 function MovieCard({ id, title, average, poster }) {
   //[현재 state, state를 변경하기 위한 함수] = [state의 초기값]

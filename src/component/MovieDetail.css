@@ -1,25 +1,23 @@
 /* 포스터 + 정보 묶은 부분 */
 .movie-detail {
-  overflow: hidden;
+  /* overflow: hidden; */
   box-sizing: border-box;
-  margin: 70px;
   display: flex;
   align-content: center;
   justify-content: center;
   width: 100vw;
-  height: 90vw;
-  gap: 40px;
-  color: white;
+  height: auto;
+  gap: 100px;
 }
 
 /* 제목 평점 장르 줄거리까지 다 묶은 부분 */
 .movie-detail-introduce {
-  height: auto;
   text-align: center;
   display: flex;
   flex-direction: column; /* 아이템을 세로 방향 순서대로 흐르게 만들기 */
   justify-content: center;
   width: 600px;
+  height: auto;
   gap: 30px;
 }
 
@@ -33,23 +31,33 @@
   gap: 20px;
 }
 
-.imgs {
-  position: relative;
-}
-
 .movie-detail-img {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   left: 0;
-  top: 0;
   right: 0;
-  bottom: 0;
+  z-index: -99;
+}
+
+/* 뒷 배경 이미지 */
+.background-img {
+  width: 100%;
+  opacity: 0.5; /* 투명도 조절 */
+  filter: grayscale(100%); /* 흑백필터 효과 */
 }
 
 .movie-detail-img-child {
-  position: absolute;
-  left: 0;
-  bottom: 0.75em;
+  width: 27vw;
+}
+
+/* 포스터 이미지 */
+.poster-img {
+  width: 100%;
+  margin-top: 23%;
+  border: 10px solid white;
+}
+.introduce {
+  text-shadow: 4px 4px 5px black; /* 글자 그림자 효과 */
 }
 
 /* .movie-detail-img-back {

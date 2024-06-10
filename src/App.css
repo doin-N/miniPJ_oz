@@ -1,5 +1,5 @@
 #abc {
-  padding-top: 120px; /* 포스터가 너무 nav에 딱 붙어서 떨어뜨려놓기 */
+  margin-top: 30px; /* 포스터가 너무 nav에 딱 붙어서 떨어뜨려놓기 */
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
