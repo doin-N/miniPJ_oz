@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { auth } from "../firebase";
@@ -13,6 +13,7 @@ const NavBar = () => {
 
   //경로
   const navigate = useNavigate();
+  // const location = useLocation();
 
   //구글 로그인 팝업창 뜨게하기 위한
   const handleChange = (e) => {
@@ -52,10 +53,12 @@ const NavBar = () => {
 
   const defaultProfileImag = "/personicon.png";
 
+  // const isDetailPage = location.pathname.startsWith("/detail");
+
   //화면에 보여주는 부분
   return (
     <>
-      <NavAll>
+      <NavAll /*</>isDetailPage={isDetailPage}*/>
         <AllBox>
           <LogoBox>
             <Link to={`/`}>
@@ -108,6 +111,8 @@ const NavBar = () => {
     </>
   );
 };
+// ${(props) =>
+// props.isDetailPage ? "transparent" : "black"};
 export default NavBar;
 
 // nav바 전제

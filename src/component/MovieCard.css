@@ -14,7 +14,6 @@
 
 .movie-map-box:hover {
   transform: scale(1.05); /* 크기를 바꾼다 : 커지게 한다(이만큼)*/
-  box-shadow: 5px 5px 5px white;
 }
 
 /* 포스터 이미지 */
@@ -29,6 +28,10 @@
   */
 }
 
+.movie-map-box img:hover {
+  box-shadow: 4px 4px 8px lightgray;
+  border-radius: 10px;
+}
 /* 제목 */
 .movie-map-box-title {
   margin-top: 7px;

@@ -4,7 +4,7 @@
 
 /* 색션1 무비정보 */
 .search-all {
-  margin-top: 100px;
+  margin-top: 20px;
   width: 100%;
   text-align: center;
   padding: 1rem 0;
@@ -34,8 +34,13 @@
 .search-movie-poster {
   background-clip: content-box; /*요소 내에서 배경이 확장되게 하는것 보더박스만큼 */
   width: 90%;
-  border: 6px double #373a40;
+  border: 1px solid transparent;
   border-radius: 20px;
+}
+
+.search-movie-poster:hover {
+  box-shadow: 4px 4px 8px #b4b4b3;
+  border-radius: 10px;
 }
 
 /* 영화가 검색되지 않을때 */
@@ -53,7 +58,6 @@
   .movie {
     padding: 0 5px;
     width: 8rem;
-
     font-size: 13px;
     transition: transform 5s; /* 특정속성이 변할때 애니메이션 적용 0.3초 지속*/
     -webkit-transition: transform 5s;
