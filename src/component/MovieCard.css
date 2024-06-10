@@ -14,6 +14,7 @@
 
 .movie-map-box:hover {
   transform: scale(1.05); /* 크기를 바꾼다 : 커지게 한다(이만큼)*/
+  box-shadow: 5px 5px 5px white;
 }
 
 /* 포스터 이미지 */
