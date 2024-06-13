@@ -124,6 +124,9 @@ const NavAll = styled.div`
   height: 80px;
   z-index: 100; // 스크롤을 내리면 다른요소들이 겹쳐서 맨위에 나타나게 함 큰숫자가 맨앞
   border-bottom: 1px solid lightgray;
+  @media (max-width: 767px) {
+    height: 60px;
+  }
 `;
 
 // 요소들 전체 박스
@@ -144,6 +147,9 @@ const NavLogo = styled.img.attrs({
   alt: "사진",
 })`
   width: 80px;
+  @media (max-width: 767px) {
+    width: 60px;
+  }
 `;
 
 const BtnBox = styled.div`
@@ -151,12 +157,20 @@ const BtnBox = styled.div`
   gap: 20px;
 `;
 
-//검색버튼
+//검색창
 const Input = styled.input`
-  width: 200px;
+  width: 200px; //기본크기
   height: 30px;
+  margin-left: 150px;
+  border: 2px solid gray;
+
   @media (max-width: 767px) {
     display: none;
+  }
+  transition: width 0.3s ease; /* 크기 변경 애니메이션 */
+  &:hover {
+    width: 300px; /* 마우스를 올렸을 때 크기 */
+  }
 `;
 
 //검색버튼 아이콘
