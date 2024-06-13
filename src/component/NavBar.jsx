@@ -53,8 +53,6 @@ const NavBar = () => {
 
   const defaultProfileImag = "/personicon.png";
 
-  // const isDetailPage = location.pathname.startsWith("/detail");
-
   //화면에 보여주는 부분
   return (
     <>
@@ -75,7 +73,19 @@ const NavBar = () => {
             onChange={handleChange}
             // 인풋테그 안에 있는 무언가가 바뀔때
             //5. 체인지 이벤트가 발생했을때 검색창에 값을 벨류값에 넣어줘
-            placeholder="검색할 영화 제목을 입력해 주세요"
+            placeholder="마우스를 대보세요"
+            onMouseEnter={(e) =>
+              e.target.setAttribute(
+                "placeholder",
+                "검색어를 입력해주세요" // 마우스를 올렸을 때 placeholder 변경
+              )
+            }
+            onMouseLeave={(e) =>
+              e.target.setAttribute(
+                "placeholder",
+                "마우스를 대보세요" // 마우스를 떼었을 때 placeholder 원래대로 변경
+              )
+            }
           />
           {/* <SearcIcon /> */}
           <BtnBox>
@@ -159,7 +169,7 @@ const BtnBox = styled.div`
 
 //검색창
 const Input = styled.input`
-  width: 200px; //기본크기
+  width: 100px; //기본크기
   height: 30px;
   margin-left: 150px;
   border: 2px solid gray;
@@ -167,9 +177,9 @@ const Input = styled.input`
   @media (max-width: 767px) {
     display: none;
   }
-  transition: width 0.3s ease; /* 크기 변경 애니메이션 */
+  transition: width 0.5s ease; /* 크기 변경 애니메이션 */
   &:hover {
-    width: 300px; /* 마우스를 올렸을 때 크기 */
+    width: 200px; /* 마우스를 올렸을 때 크기 */
   }
 `;
 

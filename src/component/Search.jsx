@@ -44,7 +44,7 @@ const Search = () => {
       const response = await axios.get(
         `/search/multi?include_adult=false&query=${searchQs}`
       );
-      //console.log(response);
+      console.log(response);
       setMovieSearch(response.data.results);
     } catch (error) {
       console.log(error);
@@ -54,7 +54,7 @@ const Search = () => {
   //
   if (movieSearch.length > 0) {
     //검색어를 입력했을때 나온 결과가 있으면
-    // console.log(movieSearch);//어떤데이터가 들어왔는지 확인
+    console.log(movieSearch); //어떤데이터가 들어왔는지 확인
     return (
       <section className="search-all">
         {movieSearch.map((movie) => {
@@ -64,6 +64,7 @@ const Search = () => {
             const movieImageUrl =
               "https://image.tmdb.org/t/p/w500" + movie.backdrop_path;
             // 무비이미지유알엘에 주소+포스터 주소 붙혀줘
+            const movieTitle = movie.title ? movie.title : movie.name;
 
             //화면에 보여주는 부분들
             return (
@@ -78,6 +79,7 @@ const Search = () => {
                     className="search-movie-poster"
                   />
                 </div>
+                <p className="searchPage-movie-poster-title">{movieTitle}</p>
               </div>
             );
           }
